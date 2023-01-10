@@ -1,0 +1,55 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: sans-serif;
+    background-color: #F5F5F5!important;
+}
+
+.img-fluid {
+    max-width: 100%; !important
+    height: auto; !important
+    max-width: 100%; !important
+    max-height: 100%; !important
+}
+
+.div-butoane {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.id-buton {
+    color: #00b2ff;
+}
+.id-buton:hover {
+    background-color: #00b2ff!important;
+    color: white!important;
+    transition: 0.5s;
+}
+
+.id-buton-outline {
+    color: #00b2ff!important;
+    border: 1px solid #00b2ff!important;
+    background-color: white;
+}
+
+.id-buton-outline:hover {
+     background-color: #00b2ff !important;
+     color: white !important;
+     transition: 0.5s;
+
+}

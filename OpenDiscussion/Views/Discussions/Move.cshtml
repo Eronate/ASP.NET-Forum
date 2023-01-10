@@ -1,0 +1,13 @@
+﻿@model OpenDiscussion.Models.Discussion 
+
+<form method="post" action="/Discussions/Move/@Model.DiscussionId">
+@Html.HiddenFor(d => d.DiscussionId, new {Value = "-1" })
+@Html.HiddenFor(d => d.Content, new {Value = "12345678910111213141516"})
+@Html.HiddenFor(d => d.Title, new {Value = "12345"})
+<label>Selectati topic-ul unde doriti sa mutati discutia.</label>
+@Html.DropDownListFor(m => m.TopicId, new SelectList(Model.AllTopics, "Value", "Text"),
+                    "Selectati topic-ul.", new { @class = "form-control"})
+
+<br />
+<button class="id-buton-outline btn" type="submit">Muta discutia.</button>
+</form>

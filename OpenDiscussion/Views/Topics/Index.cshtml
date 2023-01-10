@@ -1,0 +1,41 @@
+﻿@model OpenDiscussion.Models.Topic
+
+@{
+}
+
+<br/>
+<div class="d-inline-flex"> 
+    <a class="id-buton-outline btn" href="/Categories/Index">Inapoi</a>
+    @if (ViewBag.ShowButtons == true || ViewBag.isAdmin)
+    {
+        <a class="id-buton-outline btn" style="margin-left: 20px" href="/Topics/New/@ViewBag.TopicCategoryId">Adauga un nou topic</a>
+    }
+    <div>
+</div>
+</div>
+
+<br/>
+<br />
+@foreach(var topic in ViewBag.Topics){
+    <a href="/Discussions/Index/@topic.TopicId" class="text-decoration-none text-muted">
+    <div class="card">
+        <div class="card-body">
+                <h3 style="color:black"><strong>@topic.Name</strong></h3>
+            <div class="w-75 p-3">@topic.Description</div>
+        </div>
+
+        @if (ViewBag.ShowButtons == true || ViewBag.isAdmin)
+        {
+            <div class="div-butoane  d-flex flex-row gap-3">
+
+                    <a class="id-buton btn" href="/Topics/Edit/@topic.TopicId"><i class="bi bi-pencil"></i> Editeaza</a>
+
+                <form method="post" action="/Topics/Delete/@topic.TopicId">
+                    <button class="id-buton btn" type="submit"><i class="bi bi-trash"> Sterge</i></button>
+                </form>
+            </div>
+        }
+    </div>
+    </a>
+    <br />
+}

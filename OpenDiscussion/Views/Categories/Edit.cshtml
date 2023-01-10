@@ -1,0 +1,26 @@
+﻿@model OpenDiscussion.Models.Category
+
+<h2 class="text-center mt-5">Editare categorie</h2>
+
+<br />
+<div>
+    <a class="id-buton-outline btn" href="/Categories/Index">Inapoi</a>
+</div>
+<br />
+<br />
+
+<form method="post" action="/Categories/Edit/@Model.CategoryId">
+    @Html.Label("Name", "Denumire categorie")
+    <br />
+    @Html.ValidationMessage("Name", null, new {@class="text-danger"})
+    @Html.Editor("Name")
+    <br /><br />
+    @Html.Label("Description", "Descriere categorie")
+    <br />
+    @Html.ValidationMessage("Description", null, new {@class="text-danger"})
+    @Html.Editor("Description")
+    <br/>
+    <br />
+    <button class="id-buton-outline btn" type="submit">Modifica categoria</button>
+    <br/>
+</form>

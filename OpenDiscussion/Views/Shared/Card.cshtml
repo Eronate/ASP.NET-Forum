@@ -1,0 +1,38 @@
+﻿
+<div class="card" style="border-top: 1px solid; border-bottom: 0px; border-left: 0px; border-right: 0px; border-color: #00b2ff; border-radius: 10px">
+    <div class="card-body" style="display: grid; grid-template-columns: 1fr 3fr; ">
+        <div>
+            <h5 style="margin:auto">@Model.Date</h5>
+        </div>
+
+
+        <div>
+            <h3 style="color: black"><strong>@Model.Title</strong></h3>
+            <div class="w-75" style="padding: 20px 0px 20px 0px">@Model.Content</div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                <div><small style="text-align: bottom">@Model.User.UserName</small></div>
+            
+                @if (ViewBag.ShowButtons == true || ViewBag.CurrentUser == Model.UserId)
+                {
+                    <div class="div-butoane grap-3">
+                        <a class="id-buton btn" href="/Discussions/Edit/@Model.DiscussionId"><i class="bi bi-pencil"></i> Editeaza</a>
+                        <form method="post" action="/Discussions/Delete/@Model.DiscussionId">
+
+                            <button class="id-buton btn" type="submit"><i class="bi bi-trash"> Sterge</i></button>
+                        </form>
+                        @if (ViewBag.ShowButtons == true)
+                        {
+                            <a class="id-buton btn" href="/Discussions/Move/@Model.DiscussionId"><i class="bi bi-arrows-move"></i> Muta</a>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+
+
+    </div>
+    
+    <br/>
+    
+</div>

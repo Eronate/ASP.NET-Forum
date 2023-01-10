@@ -1,0 +1,30 @@
+﻿@model OpenDiscussion.Models.Discussion
+
+<h2 class="text-container mt-5">Adaugare discutie</h2>
+
+<br />
+<div>
+    <a class="id-buton-outline btn" href="/Discussions/Index/@Model.TopicId">Inapoi</a>
+</div>
+<br />
+<br />
+
+<br /> <br />
+
+<div class="container">
+    <div class="col-2">
+        <form method="post" action="/Discussions/New/@Model.TopicId">
+            @Html.Label("Title", "Titlu")
+            <br /> <br />
+            @Html.ValidationMessage("Title", null, new {@class="text-danger"})
+            @Html.TextBox("Title", null, new {@class="form-control"})
+            <br /> <br />
+            @Html.Label("Content", "Continutul discutiei")
+            <br /> <br />
+            @Html.ValidationMessage("Content", null, new {@class="text-danger"})
+            @Html.TextArea("Content", null, new {@class="form-control"})
+            <br/>
+            <button class="id-buton-outline btn" type="submit">Adauga discutie</button>
+        </form>        
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .body-container {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        max-width: 100%;
+    }
+</style>
+
+<div class="row" style="margin-left:0; margin-right:0;">
+    <img src="~/Image/logo.png" class="img-responsive" style="width:100%; padding:0;"/>
+</div>
+<br/>
+
+<div class="container p-3" style="margin-left:8%; background-color:#bdbdbd;">
+    <h4 class="font-roboto">Discutii din forum</h4>
+</div>
+
+<div class="container" style="margin-left:8%">
+    @foreach (var item in ViewBag.DisplayArticles)
+    {
+        <div class="row bg-light rounded-3 container-item col p-5 mb-4 row">
+            <div class="cool-md-8">
+                <h8 class="text-muted">@item.categoryName <i class="bi bi-arrow-right"></i> @item.topicName</h8>
+                <h4 class="font-roboto fw-bold"><i class="col bi bi-chat"></i>@item.discussionTitle</h4>
+                <h5 class="font-montserrat">@item.discussionContent</h5>
+            </div>
+            <br/>
+            <div class="d-flex justify-content-between">
+                <h8 class="text-muted">@item.nrComments Comentarii</h8>
+                <h8 class="text-muted flex-end">@item.discussionDate</h8>
+            </div>
+        </div>
+        <br/>
+    }
+</div>
+

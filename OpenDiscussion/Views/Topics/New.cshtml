@@ -1,0 +1,34 @@
+﻿@model OpenDiscussion.Models.Topic
+
+<br />
+<br />
+<div>
+    <a class="id-buton-outline btn" href="/Topics/Index/@ViewBag.TopicCategoryId">Inapoi</a>
+</div>
+<br />
+<h2 class="text-containter mt-5">Adaugare topic</h2>
+<br />
+
+<br/>
+
+<div class="container">
+    <div class="col-2">
+        <form method="post" action="/Topics/New">
+            <input type="hidden" name="CategoryId" value="@ViewBag.TopicCategoryId" />
+            @Html.Label("Name", "Nume Topic")
+            <br />
+            <br />
+            @Html.ValidationMessage("Name", null, new {@class="text-danger"})
+            @Html.TextBox("Name", null, new {@class="form-control"})
+            <br />
+            <br />
+            @Html.Label("Description", "Descrierea topicului")
+            <br />
+            <br />
+            @Html.ValidationMessage("Description", null, new {@class="text-danger"})
+            @Html.TextArea("Description", null, new {@class="form-control"})
+            <br/>
+            <button class="id-buton-outline btn" type="submit">Adauga topic</button>
+        </form>
+    </div>
+</div>

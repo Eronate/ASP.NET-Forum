@@ -1,0 +1,25 @@
+﻿@model OpenDiscussion.Models.Comment
+
+<h2 class="text-center mt-5">Editare comentariu</h2>
+
+<br />
+<div>
+    <a class="id-buton-outline btn" href="/Discussions/Show/@Model.DiscussionId">Inapoi</a>
+</div>
+<br />
+<br />
+
+<form method="post" action="/Comments/Edit/@Model.CommentId">
+    @Html.Label("Content", "Continut comentariu")
+    <br />
+    <br />
+    @Html.ValidationMessage("Content", null, new {@class="text-danger"})
+
+    @Html.Editor("Content")
+    <br />
+
+    <br/>
+    <br />
+    <button class="id-buton-outline btn" type="submit">Editeaza comentariul</button>
+
+</form>

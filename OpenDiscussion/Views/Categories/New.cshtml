@@ -1,0 +1,34 @@
+﻿@model OpenDiscussion.Models.Category
+
+
+<h2 class="text-containter mt-5">Adaugare categorie</h2>
+
+<br />
+<br />
+<div>
+    <a class="id-buton-outline btn" href="/Categories/Index">Inapoi</a>
+</div>
+<br />
+<br />
+
+<div class="container">
+    <div class="col-2">
+        <form method="post" action="/Categories/New">
+            @Html.Label("Name", "Nume Categorie")
+            <br />
+            <br />
+            @Html.ValidationMessage("Name", null, new {@class="text-danger"})
+            @Html.TextBox("Name", null, new {@class="form-control"})
+            <br />
+            <br />
+            @Html.Label("Description", "Descrierea categoriei")
+            <br />
+            <br />
+            @Html.ValidationMessage("Description", null, new {@class="text-danger"})
+            @Html.TextArea("Description", null, new {@class="form-control"})
+            <br/>
+            <button class="id-buton-outline btn" type="submit">Adauga categorie</button>
+            <br/>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<br/>
+@if(ViewBag.ShowButtons == true)
+{
+    <a class="id-buton-outline btn" href="/Categories/New">Adauga o noua categorie</a>
+    <br />
+}
+
+<br />
+
+@foreach (var category in ViewBag.Categories)
+{   
+    <a href="/Topics/Index/@category.CategoryId" class="text-decoration-none text-muted">
+    <div class="card" >
+
+        <div class="card-body">
+                <h3 style="color:black"><strong>@category.Name</strong></h3>
+            <div class="w-75 p-3">@category.Description</div>
+        </div>
+        @if(ViewBag.ShowButtons == true) 
+        {
+            <div class="d-flex flex-row gap-3 div-butoane">
+                    <a class="id-buton btn" href="/Categories/Edit/@category.CategoryId"><i class="bi bi-pencil"></i> Editeaza</a>
+
+                <form method="post" action="/Categories/Delete/@category.CategoryId">
+
+                        <button class="id-buton btn" type="submit"><i class="bi bi-trash"> Sterge</i></button>
+
+                </form>
+            </div>
+        }
+    </div>
+    </a>
+    <br />
+}

@@ -1,0 +1,25 @@
+﻿@model OpenDiscussion.Models.Discussion
+
+<br />
+<div>
+    <a class="id-buton-outline btn" href="/Discussions/Index/@Model.TopicId">Inapoi</a>
+</div>
+<br />
+<br />
+
+<h2 class="mt-5">Editare discutie</h2>
+<br/>
+<form method="post" action="/Discussions/Edit/@Model.DiscussionId">
+    @Html.Label("Title", "Titlu")
+    <br />
+    @Html.ValidationMessage("Title", null, new {@class="text-danger"})
+    @Html.Editor("Title")
+    <br /><br />
+    @Html.Label("Content", "Continut discutie")
+    <br />
+    @Html.ValidationMessage("Content", null, new {@class="text-danger"})
+    @Html.Editor("Content")
+    <br />
+    <br/>
+    <button class="id-buton-outline btn" type="submit">Modifica discutia</button>
+</form>
